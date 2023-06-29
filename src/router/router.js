@@ -1,7 +1,19 @@
-import Login from '../views/Login.vue';
+import App from '../App.vue';
 
 const router = [
-    {path: '/login', component: Login}
+    {
+        path: '/',
+        component: App,
+        children: []
+    },
+    {
+        path: '/login',
+        component: () => import('../views/Login/Login.vue')
+    },
+    {
+        path: '/home',
+        component: () => import('../views/Home/Home.vue')
+    }
 ]
 
 export default router;
